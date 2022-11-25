@@ -1,0 +1,164 @@
+/** Github @ardikaVito. Link*/
+/* ? You can navigate "chrome://browser/content/browser.xhtml" to check the reference.  
+   ? Feel free to customize (;
+   ? FXDev -v: 108.0b5 
+   ? Install VSCode 'Better Comments' Extension  for better DOCS  */
+
+/** Navigator container */
+/* Todo: Display oneline toolbox*/
+#navigator-toolbox {
+  min-width: 100vw;
+  display: grid !important;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: 
+    'MenubarGrid .'
+    'NavbarGrid TitlebarGrid'
+    'PersonalToolbarGrid PersonalToolbarGrid' !important;
+}
+
+/** Menubar */
+#toolbar-menubar {
+  grid-area: MenubarGrid;
+}
+
+/* Todo: Menubar visibility */
+#toolbar-menubar > #menubar-items {
+  display: block !important;
+  width: 100vw !important;
+  position: absolute;
+}
+/* Hide */
+#toolbar-menubar > #menubar-items {
+  /* visibility: collapse; */
+  top: -20px !important;
+  left: 0 !important;
+}
+/* Voila! Menubar appears*/
+#toolbar-menubar:not([inactive]) #menubar-items {
+  /* visibility: visible !important; */
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* Todo: Hide window buttonbox*/
+#toolbar-menubar > .titlebar-buttonbox-container{
+  /*? For information, go -> #TabsToolbar > .titlebar-buttonbox-container */
+  display: none;
+}
+/*--------------------------------------------------------------------------------------------*/
+
+/** Navigation bar, Searchbar & Setting, etc*/
+#nav-bar {
+  max-width: 738px;
+  height: min-content;
+  grid-area: NavbarGrid;
+  align-self: end;
+  border: none !important;
+}
+/*--------------------------------------------------------------------------------------------*/
+
+/** Browser tabs*/
+#titlebar {
+  grid-area: TitlebarGrid;
+}
+
+/* Todo: Remove spacer for more space */
+.titlebar-spacer[type="pre-tabs"],
+.titlebar-spacer[type="post-tabs"] { 
+  display: none !important;
+}
+
+/* Todo: Turn main buttonbox visible*/
+#TabsToolbar > .titlebar-buttonbox-container {
+  /*? You can comment this code if u prefer close button on top of d window when u open menu bar. 
+  /*? Then change (#toolbar-menubar > .titlebar-buttonbox-container) display: block; */
+  visibility: visible !important;
+  margin-bottom: 0 !important;
+}
+
+/* Todo: Manipulate direction of Toolbar*/
+#TabsToolbar-customization-target {
+  display: grid!important;
+  grid-template-areas: 'AlltabsButtonGrid TabbrowserTabsGrid NewTabButtonGrid' !important;
+  grid-template-columns: min-content auto min-content;
+}
+/* List all tabs*/
+#alltabs-button {
+  grid-area: AlltabsButtonGrid;
+}
+/* Tab navigation */
+#tabbrowser-tabs {
+  grid-area: TabbrowserTabsGrid;
+}
+/* Newtab Button */
+#new-tab-button {
+  grid-area: NewTabButtonGrid;
+}
+
+/* Todo: Fix navigator container margin-top*/
+.tabbrowser-tab .tab-background {
+  margin: 0 0 2px 0 !important;
+  padding-top: 2px !important;
+}
+/*--------------------------------------------------------------------------------------------*/
+
+/** Personal Toolbar*/
+#PersonalToolbar {
+  grid-area: PersonalToolbarGrid;
+}
+/*--------------------------------------------------------------------------------------------*/
+
+/** Responsive design */
+
+@media screen and (max-width: 1110px) {
+  /* Todo: Initialise navbar minimun width */
+  #nav-bar  {
+    min-width: 520px !important;
+    max-width: none;
+  }
+
+  /* Todo: Only display selected tab*/
+  #scrollbutton-up, #scrollbutton-down {
+    visibility: collapse;
+  }
+  .tabbrowser-tab:not([selected]) {
+    visibility: collapse;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  /* Todo: Reinitialise grid template */
+  #navigator-toolbox {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      'MenubarGrid'
+      'TitlebarGrid'
+      'NavbarGrid'
+      'PersonalToolbarGrid' !important;
+  }
+
+  /* Todo: Only display all tabs*/
+  #scrollbutton-up, #scrollbutton-down {
+    visibility: visible;
+  }
+  .tabbrowser-tab {
+    visibility: visible !important;
+  } 
+}
+
+@media screen and (max-width: 520px) {
+  /* Todo: Reinitialise nav-bar width*/
+  #nav-bar  {
+    min-width: 100vw !important;
+  }
+
+  /* Todo: Only display selected tab*/
+  #scrollbutton-up, #scrollbutton-down {
+    visibility: collapse;
+  }
+  .tabbrowser-tab:not([selected]) {
+    visibility: collapse !important;
+  }
+}
+/*--------------------------------------------------------------------------------------------*/
+/** @ardikaVito: Goodbaiii ✌️ */
