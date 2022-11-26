@@ -3,9 +3,11 @@
 ## Firefox-UX-Custom
 Let's make ***your own*** experience! <br>
 
-**Advantages**<br>
-    - Clean Look<br>
-    - Space Management<br>
-    - Customizable code<br>
-    - *Decent* documentation
+**Advantages:**<br>
+    - Clean Look.<br>
+    - Space Management.<br>
+    - Customizable code.<br>
+    - *Decent* documentation.
     
+**Disadvantages:**<br>
+    - Wouldn't recommend to place custom toolbar beside     browsertabs.<br>
