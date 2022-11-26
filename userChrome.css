@@ -1,14 +1,17 @@
-/** Github @ardikaVito. Link: https://github.com/ardikaVito/Firefox-UX-Custom/blob/main/userChrome.css*/
-/* ? You can navigate "chrome://browser/content/browser.xhtml" to check the reference.  
-   ? Feel free to customize (;
-   ? FXDev -v: 108.0b5 
-   ? Install VSCode 'Better Comments' Extension  for better DOCS  */
+/**
+  * * Github @ardikaVito. Link: https://github.com/ardikaVito/Firefox-UX-Custom/blob/main/userChrome.css
+  * ? You can navigate "chrome://browser/content/browser.xhtml" to check the reference.  
+  * ? Feel free to customize
+  * ? FXDev -v: 108.0b5 
+  * ? Install Atom/VSCode 'Better Comments' Extension  for better DOCS 
+*/
+
 
 /** Navigator container */
-/* Todo: Display oneline toolbox*/
-#navigator-toolbox {
+/* Todo: Display oneline toolbox */
+#navigator-toolbox { /* ! Fragile to modify */
   min-width: 100vw;
-  display: grid !important;
+  display: grid !important; /* ! Do not touch */
   grid-template-columns: auto 1fr;
   grid-template-areas: 
     'MenubarGrid .'
@@ -18,95 +21,116 @@
 
 /** Menubar */
 #toolbar-menubar {
-  grid-area: MenubarGrid;
+  grid-area: MenubarGrid; /* ! Do not touch */
 }
 
 /* Todo: Menubar visibility */
+/* Hide */
 #toolbar-menubar > #menubar-items {
   display: block !important;
   width: 100vw !important;
   position: absolute;
-}
-/* Hide */
-#toolbar-menubar > #menubar-items {
   top: -20px !important;
   left: 0 !important;
 }
-/* Voila! Menubar appears*/
+/* Voila! Menubar appears */
 #toolbar-menubar:not([inactive]) #menubar-items {
   top: 0 !important;
-  left: 0 !important;
 }
 
 /* Todo: Hide window buttonbox*/
 #toolbar-menubar > .titlebar-buttonbox-container{
   /*? For information, go -> #TabsToolbar > .titlebar-buttonbox-container */
-  display: none;
+  display: none; /* <- Safe to modify */
 }
 /*--------------------------------------------------------------------------------------------*/
 
-/** Navigation bar, Searchbar & Setting, etc*/
+/** Navigation bar, Searchbar & Setting, etc */
 #nav-bar {
-  max-width: 738px;
+  max-width: 738px; /* <- Safe to modify for display 1366px+ */
   height: min-content;
-  grid-area: NavbarGrid;
+  grid-area: NavbarGrid; /* ! Do not touch */
   align-self: end;
   border: none !important;
 }
 /*--------------------------------------------------------------------------------------------*/
 
-/** Browser tabs*/
+/** Browser tabs */
 #titlebar {
-  grid-area: TitlebarGrid;
+  grid-area: TitlebarGrid; /* ! Do not touch */
+}
+
+/* Todo: Prevent element to over */
+#TabsToolbar {
+  overflow-y: hidden !important;
 }
 
 /* Todo: Remove spacer for more space */
-.titlebar-spacer[type="pre-tabs"],
-.titlebar-spacer[type="post-tabs"] { 
-  display: none !important;
+/* .titlebar-spacer[type="post-tabs"], */  /* <- Free to uncomment. In exchange, sometimes u'll find dificult to move d window*/ 
+.titlebar-spacer[type="pre-tabs"] { 
+  display: none !important; /* <- Safe to modify for display 1366px+ */
 }
 
-/* Todo: Turn main buttonbox visible*/
-#TabsToolbar > .titlebar-buttonbox-container {
-  /*? You can comment this code if u prefer close button on top of d window when u open menu bar. 
+/* Todo: Turn main buttonbox visible */
+#TabsToolbar > .titlebar-buttonbox-container { /* <- Safe to modify */
+  /*? You can comment this code bello if u prefer close button on top of d window when u open menu bar. 
   /*? Then change (#toolbar-menubar > .titlebar-buttonbox-container) display: block; */
-  visibility: visible !important;
+  visibility: visible !important; 
   margin-bottom: 0 !important;
-}
+}           
 
-/* Todo: Manipulate direction of Toolbar*/
+/* Todo: Manipulate direction of Toolbar */
 #TabsToolbar-customization-target {
-  display: grid!important;
-  grid-template-areas: 'AlltabsButtonGrid TabbrowserTabsGrid NewTabButtonGrid' !important;
-  grid-template-columns: min-content auto min-content;
+  display: flex !important; /* ! Do not touch */
+}
+#TabsToolbar-customization-target *:not(#tabbrowser-tabs){
+  flex-grow: 0 !important; /* ! Do not touch */
 }
 /* List all tabs*/
 #alltabs-button {
-  grid-area: AlltabsButtonGrid;
+  order: -1 !important;
 }
 /* Tab navigation */
 #tabbrowser-tabs {
-  grid-area: TabbrowserTabsGrid;
+  flex-grow: 1 !important; /* ! Do not touch */
 }
 /* Newtab Button */
 #new-tab-button {
-  grid-area: NewTabButtonGrid;
+  order: 1 !important;
 }
 
-/* Todo: Fix navigator container margin-top*/
-.tabbrowser-tab .tab-background {
-  margin: 0 0 2px 0 !important;
-  padding-top: 2px !important;
+/** Tab */
+/* Todo: Fix navigator container margin-top */
+.tabbrowser-tab .tab-background { 
+  margin: 0 0 2px 0 !important; /* ! Do not touch */
+  padding-top: 2px !important; /* ! Do not touch */
+  /* Todo: Glass look. No outline */ 
+  outline: none !important; /* <- Safe to modify */
+}
+
+/* Todo: Interactive tab-close button | always hide close-button */
+/* Hide. 
+   ? Uncomment code below(.tabbrowser-tab[selected] image[class="tab-close-button close-icon"],) 
+   ? to get tabbrowser look cleaner*/
+.tabbrowser-tab[selected] image[class="tab-close-button close-icon"],
+.tabbrowser-tab:not([selected]) image[class="tab-close-button close-icon"] {
+  display: none;
+}
+/* Hover: Voila!*/
+.tabbrowser-tab[selected]:hover image[class="tab-close-button close-icon"],
+.tabbrowser-tab:not([selected]):hover image[class="tab-close-button close-icon"] {
+  display: block !important;
 }
 /*--------------------------------------------------------------------------------------------*/
 
 /** Personal Toolbar*/
 #PersonalToolbar {
-  grid-area: PersonalToolbarGrid;
+  grid-area: PersonalToolbarGrid; /* ! Do not touch */ 
 }
 /*--------------------------------------------------------------------------------------------*/
 
-/** Responsive design */
+/** Responsive design */ 
+/* ? Happy redesign (; */
 
 @media screen and (max-width: 1110px) {
   /* Todo: Initialise navbar minimun width */
@@ -115,7 +139,7 @@
     max-width: none;
   }
 
-  /* Todo: Only display selected tab*/
+  /* Todo: Only display selected tab */
   #scrollbutton-up, #scrollbutton-down {
     visibility: collapse;
   }
@@ -135,7 +159,7 @@
       'PersonalToolbarGrid' !important;
   }
 
-  /* Todo: Only display all tabs*/
+  /* Todo: Only display all tabs */
   #scrollbutton-up, #scrollbutton-down {
     visibility: visible;
   }
@@ -145,12 +169,12 @@
 }
 
 @media screen and (max-width: 520px) {
-  /* Todo: Reinitialise nav-bar width*/
+  /* Todo: Reinitialise nav-bar width */
   #nav-bar  {
     min-width: 100vw !important;
   }
 
-  /* Todo: Only display selected tab*/
+  /* Todo: Only display selected tab */
   #scrollbutton-up, #scrollbutton-down {
     visibility: collapse;
   }
