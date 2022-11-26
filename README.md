@@ -1,7 +1,6 @@
-<img align="right" width="520" src="https://media.giphy.com/media/OyHJuBRcdejseJu98s/giphy.gif" alt="animated" />  
-
 ## Firefox-UX-Custom
-Let's make ***your own*** experience! <br>
+<img align="right" width="50%" src="https://media.giphy.com/media/OyHJuBRcdejseJu98s/giphy.gif" alt="animated" />  
+Let's make ***your own*** experience!
 
 **Advantages:**<br>
     - Clean Look.<br>
