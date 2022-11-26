@@ -10,4 +10,4 @@ Let's make ***your own*** experience! <br>
     - *Decent* documentation.
     
 **Disadvantages:**<br>
-    - Wouldn't recommend to place custom toolbar beside     browsertabs.<br>
+    - Wouldn't recommend to place custom toolbar beside browsertabs.<br>
