@@ -53,6 +53,7 @@
   align-self: end;
   border: none !important;
 }
+
 /*--------------------------------------------------------------------------------------------*/
 
 /** Browser tabs */
@@ -131,14 +132,7 @@
 
 /** Responsive design */ 
 /* ? Happy redesign (; */
-
-@media screen and (max-width: 1110px) {
-  /* Todo: Initialise navbar minimun width */
-  #nav-bar  {
-    min-width: 520px !important;
-    max-width: none;
-  }
-
+@media screen and (max-width: 1200px) {
   /* Todo: Only display selected tab */
   #scrollbutton-up, #scrollbutton-down {
     visibility: collapse;
@@ -148,7 +142,12 @@
   }
 }
 
-@media screen and (max-width: 1032px) {
+@media screen and (max-width: 1092px) {
+  /* Todo: Let #nav-bar reach maximum size */
+  #nav-bar {
+    max-width: none;
+  }
+
   /* Todo: Reinitialise grid template */
   #navigator-toolbox {
     grid-template-columns: 1fr;
@@ -168,10 +167,22 @@
   } 
 }
 
+@media screen and (min-width: 770px) {
+  /* Todo: Initialise navbar minimun width */
+  #urlbar-container {
+    min-width: 520px !important;
+  }
+}
+
 @media screen and (max-width: 520px) {
   /* Todo: Reinitialise nav-bar width */
   #nav-bar  {
     min-width: 100vw !important;
+  }
+
+  /* Todo: Initialise navbar minimun width */
+  #urlbar-container {
+    min-width: 248px !important;
   }
 
   /* Todo: Only display selected tab */
