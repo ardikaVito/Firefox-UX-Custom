@@ -74,7 +74,7 @@
 
 /* Todo: Turn main buttonbox visible */
 #TabsToolbar > .titlebar-buttonbox-container { /* <- Safe to modify */
-  /*? You can comment this code bello if u prefer close button on top of d window when u open menu bar. 
+  /*? You can comment this code below if u prefer close button on top of d window when u open menu bar. 
   /*? Then change (#toolbar-menubar > .titlebar-buttonbox-container) display: block; */
   visibility: visible !important; 
   margin-bottom: 0 !important;
@@ -89,15 +89,20 @@
 }
 /* List all tabs*/
 #alltabs-button {
-  order: -1 !important;
+  order: -2 !important; /* Free modify/comment */
 }
 /* Tab navigation */
 #tabbrowser-tabs {
   flex-grow: 1 !important; /* ! Do not touch */
+  order: -4 !important; /* Free modify/comment */
 }
 /* Newtab Button */
-#new-tab-button {
-  order: 1 !important;
+#tabs-newtab-button {
+  display: none; /* Free modify */
+}
+#new-tab-button { /** TabsToolbar */
+  display: block !important; /* Free modify/comment */
+  order: -3 !important; /* Free modify/comment */
 }
 
 /** Tab */
@@ -131,6 +136,15 @@
 /*--------------------------------------------------------------------------------------------*/
 
 /** Responsive design */ 
+
+@media screen and (max-width: 1366px) {  
+  /* Todo: Maximize Browser when hover 
+    ? Uncomment if u dont like */
+  #titlebar:hover ~ #nav-bar {
+    visibility: collapse !important;
+  }
+}
+
 /* ? Happy redesign (; */
 @media screen and (max-width: 1200px) {
   /* Todo: Only display selected tab */
@@ -138,7 +152,7 @@
     visibility: collapse;
   }
   .tabbrowser-tab:not([selected]) {
-    visibility: collapse;
+    visibility: collapse; 
   }
 }
 
@@ -149,9 +163,9 @@
   }
 
   /* Todo: Reinitialise grid template */
-  #navigator-toolbox {
-    grid-template-columns: 1fr;
-    grid-template-areas: 
+  #navigator-toolbox {  /* Todo: Oneliner */
+    grid-template-columns: 1fr; /* ! Do not touch */
+    grid-template-areas: /* ! Do not touch */
       'MenubarGrid'
       'TitlebarGrid'
       'NavbarGrid'
