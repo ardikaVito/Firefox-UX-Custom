@@ -46,7 +46,7 @@
 /** Navigation bar, Searchbar & Setting, etc */
 #nav-bar {
   max-width: 738px; /* <- Safe to modify for display 1366px+ */
-  height: min-content;
+  height: 100% !important;
   grid-area: NavbarGrid; /* ! Do not touch */
   align-self: end;
   border: none !important;
@@ -85,29 +85,48 @@
 #TabsToolbar-customization-target *:not(#tabbrowser-tabs){
   flex-grow: 0 !important; /* ! Do not touch */
 }
+
+/* Todo: Change direction */
+#tabbrowser-arrowscrollbox {
+  direction: rtl; /* Free modify/comment */
+}
+#scrollbutton-down, #scrollbutton-up {
+  transform: scaleX(-1);
+}
+
+scrollbox[orient="horizontal"]:first-child, #tabbrowser-arrowscrollbox * {}
 /* List all tabs*/
 #alltabs-button {
-  order: -2 !important; /* Free modify/comment */
+  order: -1 !important; /* Free modify/comment */
 }
 /* Tab navigation */
 #tabbrowser-tabs {
+  margin-left: 0;
   flex-grow: 1 !important; /* ! Do not touch */
-  order: -4 !important; /* Free modify/comment */
+  order: -3 !important; /* Free modify/comment */
 }
 /* Newtab Button */
 #tabs-newtab-button {
   display: none; /* Free modify */
+  /* order: -2 !important;  */
 }
 #new-tab-button { /** TabsToolbar */
   display: block !important; /* Free modify/comment */
-  order: -3 !important; /* Free modify/comment */
+  order: -2 !important; /* Free modify/comment */
 }
 
 /** Tab */
+/* Todo: Give vertical margin */
+.tabbrowser-tab {
+  padding-top: 2px !important; /* Safe to modify */
+  padding-bottom: 2px !important; /* Safe to modify */
+  direction: ltr;
+}
+
 /* Todo: Fix navigator container margin-top */
 .tabbrowser-tab .tab-background { 
-  margin: 0 0 2px 0 !important; /* ! Do not touch */
-  padding-top: 2px !important; /* ! Do not touch */
+  margin: 0 !important; /* ! Do not touch */
+
   /* Todo: Glass look. No outline */ 
   outline: none !important; /* <- Safe to modify */
 }
