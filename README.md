@@ -7,7 +7,8 @@ Let's make ***your own*** experience!
     - Clean Look.<br>
     - Space Management.<br>
     - Customizable code.<br>
-    - *Decent* documentation.
+    - *Decent* documentation.<br>
+    - Responsive design
     
 **Disadvantages:**<br>
     - Wouldn't recommend to place custom toolbar beside browsertabs.<br>
