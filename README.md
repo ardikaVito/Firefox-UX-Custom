@@ -18,4 +18,4 @@ Let's make ***your own*** experience!
 2. Choose profile and `Open Folder` at Root directory.
 3. Create new folder, then name it `chrome`.
 4. Extract the zip file to the `chrome` folder. Alternative way is open cmd and cd to `chrome` folder, then run `git clone https://github.com/ardikaVito/Firefox-UX-Custom.git`.
-5. Restart browser, and **Crinus Muto**.
+5. Restart browser, and **Crinus Muto**!
