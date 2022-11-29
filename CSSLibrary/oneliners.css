@@ -1,0 +1,74 @@
+/* 
+  * Github @ardikaVito. Link: https://github.com/ardikaVito/Firefox-UX-Custom/blob/main/userChrome.css
+  ? You can navigate "chrome://browser/content/browser.xhtml" to check the reference.  
+  ? Feel free to customize
+  ? FXDev -v: 108.0b5 
+  ? Install Atom/VSCode 'Better Comments' Extension  for better DOCS 
+*/
+
+
+  /*--------------------------------------------------------------------------------------------*/
+  
+  /*--------------------------------------------------------------------------------------------*/
+  
+  /** Browser tabs */
+
+  /* Todo: Prevent element to over */
+  #TabsToolbar {
+    overflow-y: hidden !important;
+  }
+  
+     
+  
+  /* Todo: Change direction */
+  #tabbrowser-arrowscrollbox {
+    direction: rtl; /* Free modify/comment */
+  }
+  #scrollbutton-down, #scrollbutton-up {
+    transform: scaleX(-1);
+  }
+  
+  
+  /** Tab */
+  /* Todo: Give vertical margin */
+  .tabbrowser-tab {
+    padding-top: 2px !important; /* Safe to modify */
+    padding-bottom: 2px !important; /* Safe to modify */
+    direction: ltr;
+  }
+  
+
+  /*--------------------------------------------------------------------------------------------*/
+  
+  /*--------------------------------------------------------------------------------------------*/
+  
+  /** Responsive design */ 
+  
+  @media screen and (max-width: 1366px) {  
+    /* Todo: Maximize Browser when hover 
+      ? Uncomment if u dont like */
+    #titlebar:hover ~ #nav-bar {
+      visibility: collapse !important;
+    }
+  }
+  
+  /* ? Happy redesign (; */
+  @media screen and (max-width: 1200px) {
+ 
+  }
+  
+  @media screen and (max-width: 1092px) {
+  }
+  
+  @media screen and (min-width: 770px) {
+    /* Todo: Initialise navbar minimun width */
+    #urlbar-container {
+      min-width: 520px !important;
+    }
+  }
+  
+  @media screen and (max-width: 520px) {
+
+  }
+  /*--------------------------------------------------------------------------------------------*/
+  /** @ardikaVito: Goodbaiii ✌️ */

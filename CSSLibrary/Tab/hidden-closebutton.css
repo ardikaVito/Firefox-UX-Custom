@@ -1,4 +1,8 @@
-
+/* 
+  * Github @ardikaVito. Link: https://github.com/ardikaVito/Firefox-UX-Custom/blob/main/CSSLibrary/Tab/hidden-closebutton.css.
+  ? Feel free to customize.
+  ? Install Atom/VSCode 'Better Comments' Extension  for better DOCS. 
+*/
 
 /* Todo: Interactive tab-close button | always hide close-button */
 /* Hide. 
@@ -6,10 +10,13 @@
 ? to get tabbrowser look cleaner*/
 .tabbrowser-tab[selected] image[class="tab-close-button close-icon"],
 .tabbrowser-tab:not([selected]) image[class="tab-close-button close-icon"] {
-    display: none;
+  display: none;
 }
 /* Hover: Voila!*/
 .tabbrowser-tab[selected]:hover image[class="tab-close-button close-icon"],
 .tabbrowser-tab:not([selected]):hover image[class="tab-close-button close-icon"] {
-    display: block !important;
+  display: block !important;
 }
+
+/*--------------------------------------------------------------------------------------------*/
+/** @ardikaVito: Goodbaiii ✌️ */

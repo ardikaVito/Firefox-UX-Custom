@@ -1,6 +1,6 @@
 /* 
   * Github @ardikaVito. Link: https://github.com/ardikaVito/Firefox-UX-Custom.
-  ? You can navigate "chrome://browser/content/browser.xhtml" to check the reference.  
+  ? You can navigate "chrome://browser/content/browser.xhtml" or "https://firefox-source-docs.mozilla.org/devtools-user/browser_toolbox/index.html"  to check the reference.  
   ? Feel free to customize.
   ? FXDev -v: 108.0b5
   ? Install Atom/VSCode 'Better Comments' Extension  for better DOCS. 
@@ -8,8 +8,8 @@
 
 
 /** Navigator Toolbox */
-/* Todo: Oneliner Navigator Toolbox */
-@import url(./CSSLibrary/Layout/oneliner-navigator-toolbox.css);
+/* Todo: Oneliner Navigator Toolbox for windows */
+@import url(./CSSLibrary/Layout/oneliner-navigator-toolbox.css);  
 /*--------------------------------------------------------------------------------------------*/
 
 /** Each Tab */
@@ -22,6 +22,6 @@
 
 /** Button Container */
 /* Todo: Close Button still in Titlebar */
-@import url(./CSSLibrary/button-titlebar-visible.css);
+@import url(./CSSLibrary/Button/button-titlebar-visible.css);
 /*--------------------------------------------------------------------------------------------*/
 /** @ardikaVito: Goodbaiii ✌️ */

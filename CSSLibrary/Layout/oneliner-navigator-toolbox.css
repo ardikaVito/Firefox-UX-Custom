@@ -1,4 +1,8 @@
-
+/* 
+  * Github @ardikaVito. Link: https://github.com/ardikaVito/Firefox-UX-Custom/blob/main/CSSLibrary/Layout/oneliner-navigator-toolbox.css.
+  ? Feel free to customize.
+  ? Install Atom/VSCode 'Better Comments' Extension  for better DOCS. 
+*/
 
 /** Navigator Container */
 /* Todo: Display online toolbox */
@@ -44,6 +48,9 @@
 /** Browser Tabs(Titlebar) */
 #titlebar {
   grid-area: TitlebarGrid; /* ! Do not touch */
+}
+
+#TabsToolbar {
   height: 40px;
 }
 
@@ -68,7 +75,6 @@
 
 /* Tab navigation */
 #tabbrowser-tabs {
-  margin-left: 0;
   flex-grow: 1 !important; /* ! Do not touch */
   order: -3; /* Free modify/comment */
   margin-left: 0 !important;

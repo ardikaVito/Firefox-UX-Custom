@@ -1,4 +1,13 @@
+/* 
+  * Github @ardikaVito. Link: https://github.com/ardikaVito/Firefox-UX-Custom/blob/main/CSSLibrary/Tab/tab-glass.css.
+  ? Feel free to customize.
+  ? Install Atom/VSCode 'Better Comments' Extension  for better DOCS. 
+*/
+
 /* Todo: Glass look. No outline */ 
 .tabbrowser-tab .tab-background {
   outline: none !important; /* <- Safe to modify */
 }
+
+/*--------------------------------------------------------------------------------------------*/
+/** @ardikaVito: Goodbaiii ✌️ */
