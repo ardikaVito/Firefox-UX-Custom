@@ -1,0 +1,185 @@
+
+
+/** Navigator Container */
+/* Todo: Display online toolbox */
+#navigator-toolbox { /* ! Fraggile*/
+  min-width: 100vw;
+  display: grid;
+  grid-template-areas:
+    'MenubarGrid .'
+    'NavbarGrid TitlebarGrid'
+    'PersonalToolbarGrid PersonalToolbarGrid';
+  grid-template-columns: auto 1fr;
+  border: none !important;
+}
+
+/** Menubar */
+#toolbar-menubar {
+  grid-area: MenubarGrid; /* ! Do not touch */
+}
+
+/* Todo: Menubar visibility */
+/* Hide */
+#toolbar-menubar > #menubar-items {
+  width: 100vw;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: -50px;
+}
+/* Voila! menubar appears */
+#toolbar-menubar:not([inactive]) > #menubar-items {
+  top: 0px;
+}
+/*--------------------------------------------------------------------------------------------*/
+
+/** Navbar */
+#nav-bar {
+  grid-area: NavbarGrid; /* ! Do not touch */
+  height: min-content;
+  align-self: end;
+}
+/*--------------------------------------------------------------------------------------------*/
+  
+/** Browser Tabs(Titlebar) */
+#titlebar {
+  grid-area: TitlebarGrid; /* ! Do not touch */
+  height: 40px;
+}
+
+/* Todo: Remove spacer for more space */
+/* .titlebar-spacer[type="post-tabs"], */  /* <- Free to uncomment. In exchange, sometimes u'll find dificult to move d window*/ 
+.titlebar-spacer[type="pre-tabs"] { 
+  display: none; /* <- Safe to modify for display 1366px+ */
+}
+
+/* Todo: Manipulate order of Toolbar */
+#TabsToolbar-customization-target {
+  display: flex; /* ! Do not touch */
+}
+#TabsToolbar-customization-target *:not(#tabbroswer-tabs) {
+  flex-grow: 0; /* ! Do not touch */
+}
+
+/* List all tabs*/
+#alltabs-button {
+  order: -1; /* Free modify/comment */
+}
+
+/* Tab navigation */
+#tabbrowser-tabs {
+  margin-left: 0;
+  flex-grow: 1 !important; /* ! Do not touch */
+  order: -3; /* Free modify/comment */
+  margin-left: 0 !important;
+  border-left: 0 !important;
+}
+
+/* Newtab Button */
+#tabs-newtab-button, #new-tab-button {
+  order: -2;
+}
+
+/** Each Tab */
+/* Todo: Give vertical margin */
+#TabsToolbar-customization-target {
+  padding-bottom: 2px; 
+}
+
+/* Todo: Fix navigator container margin-top */
+.tabbrowser-tab .tab-background { 
+  margin: 0 !important; /* ! Do not touch */
+}
+
+/* Todo: Give margin-bottom 0*/
+#titlebar-buttonbox-container {
+  margin-bottom: 0 !important;
+}
+/*--------------------------------------------------------------------------------------------*/
+
+/** Personal Toolbar*/
+#PersonalToolbar {
+  grid-area: PersonalToolbarGrid; /* ! Do not touch */ 
+}
+/*--------------------------------------------------------------------------------------------*/
+
+/** Responsive design */
+/* ? Happy redesign (; */
+
+@media screen and (max-width: 1200px) {
+  /* Todo: Only display selected tab */
+  #scrollbutton-up, #scrollbutton-down {
+    visibility: collapse;
+  }
+  .tabbrowser-tab:not([selected]) {
+    visibility: collapse; 
+  }
+}
+
+@media screen and (min-width: 1092px) {
+  /* Todo: Hide #nav-bar when */
+  #titlebar:hover ~ #nav-bar {
+    display: none;
+  }
+
+  /* Todo: Reinitialise #nav-bar size */
+  #nav-bar {
+    max-width: 738px;
+    width: 668px;
+  }
+}
+
+@media screen and (max-width: 1092px) {
+  /* Todo: Let #nav-bar reach maximum size */
+  #nav-bar {
+    max-width: none;
+  }
+  
+  /* Todo: Reinitialise grid template */
+  #navigator-toolbox {
+    grid-template-columns: 1fr; /* ! Do not touch */
+    grid-template-areas: /* ! Do not touch */
+      'MenubarGrid'
+      'TitlebarGrid'
+      'NavbarGrid'
+      'PersonalToolbarGrid';
+  }
+
+  /* Todo: Only display all tabs */
+  #scrollbutton-up, #scrollbutton-down {
+    visibility: visible !important;
+  }
+  .tabbrowser-tab {
+    visibility: visible !important;
+  } 
+}
+
+@media screen and (min-width: 770px) {
+  /* Todo: Initialise navbar minimun width */
+  #urlbar-container {
+    min-width: 520px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  /* Todo: Reinitialise nav-bar width */
+  #nav-bar {
+    min-width: 100vw;
+  }
+
+  /* Todo: Initialise navbar minimun width */
+  #urlbar-container {
+    min-width: 248px;
+  }
+  
+  /* Todo: Only display selected tab */
+  #scrollbutton-up, #scrollbutton-down {
+    visibility: collapse !important;
+  }
+  .tabbrowser-tab:not([selected]) {
+    visibility: collapse !important;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------*/
+/** @ardikaVito: Goodbaiii ✌️ */

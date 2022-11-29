@@ -1,0 +1,4 @@
+/* Todo: Glass look. No outline */ 
+.tabbrowser-tab .tab-background {
+  outline: none !important; /* <- Safe to modify */
+}

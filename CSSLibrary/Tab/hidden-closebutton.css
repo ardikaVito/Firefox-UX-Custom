@@ -1,0 +1,15 @@
+
+
+/* Todo: Interactive tab-close button | always hide close-button */
+/* Hide. 
+? Uncomment code below(.tabbrowser-tab[selected] image[class="tab-close-button close-icon"],) 
+? to get tabbrowser look cleaner*/
+.tabbrowser-tab[selected] image[class="tab-close-button close-icon"],
+.tabbrowser-tab:not([selected]) image[class="tab-close-button close-icon"] {
+    display: none;
+}
+/* Hover: Voila!*/
+.tabbrowser-tab[selected]:hover image[class="tab-close-button close-icon"],
+.tabbrowser-tab:not([selected]):hover image[class="tab-close-button close-icon"] {
+    display: block !important;
+}

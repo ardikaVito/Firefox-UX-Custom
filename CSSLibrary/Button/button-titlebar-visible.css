@@ -1,0 +1,13 @@
+/* Todo: Hide window buttonbox*/
+#toolbar-menubar > .titlebar-buttonbox-container{
+/*? For information, go -> #TabsToolbar > .titlebar-buttonbox-container */
+display: none; /* <- Safe to modify */
+}
+
+/* Todo: Turn main buttonbox visible */
+#TabsToolbar > .titlebar-buttonbox-container { /* <- Safe to modify */
+/*? You can comment this code below if u prefer close button on top of d window when u open menu bar. 
+/*? Then change (#toolbar-menubar > .titlebar-buttonbox-container) display: block; */
+visibility: visible !important; 
+margin-bottom: 0 !important;
+}    
