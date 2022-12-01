@@ -25,3 +25,8 @@
 @import url(./CSSLibrary/Button/button-titlebar-visible.css);
 /*--------------------------------------------------------------------------------------------*/
 /** @ardikaVito: Goodbaiii ✌️ */
+
+.scroller {
+  overflow-y: scroll;
+  scrollbar-color: #0A4C95 #C2D2E4 !important;
+}

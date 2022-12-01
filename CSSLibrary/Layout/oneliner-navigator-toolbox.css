@@ -20,6 +20,10 @@
 /** Menubar */
 #toolbar-menubar {
   grid-area: MenubarGrid; /* ! Do not touch */
+  height: fit-content !important;
+}
+#toolbar-menubar:not([inactive]) {
+  margin-bottom: 4px !important;
 }
 
 /* Todo: Menubar visibility */
@@ -30,6 +34,7 @@
   position: absolute;
   left: 0px;
   top: -50px;
+
 }
 /* Voila! menubar appears */
 #toolbar-menubar:not([inactive]) > #menubar-items {
@@ -124,8 +129,8 @@
 
 @media screen and (min-width: 1092px) {
   /* Todo: Hide #nav-bar when */
-  #titlebar:hover ~ #nav-bar {
-    display: none;
+  #titlebar #TabsToolbar:hover ~ #nav-bar {
+    display: none !important;
   }
 
   /* Todo: Reinitialise #nav-bar size */
