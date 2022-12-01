@@ -9,9 +9,7 @@ Let's make ***your own*** experience!
 - Customizable code.
 - *Decent* documentation.
 - Responsive design.
-    
-### Disadvantages:
-- Wouldn't recommend to place custom toolbar beside browsertabs.<br>
+
 
 ## Installation?
 1. Navigate browser to `about:config`, then accept.
